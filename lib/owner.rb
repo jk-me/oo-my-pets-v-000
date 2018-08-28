@@ -24,21 +24,21 @@ class Owner
   end 
   def buy_fish(name)
     fish=Fish.new(name)
-    self.pets[0] << fish 
+    self.pets[:fishes] << fish 
   end 
   def buy_cat(name)
     cat=Cat.new(name)
-    self.pets[1] << cat 
+    self.pets[:cats] << cat 
   end
   def buy_dog(name)
     dog=Dog.new(name)
-    self.pets[2] << dog 
+    self.pets[:dogs] << dog 
   end 
   def walk_dogs 
-    self.pets[2].each { |d| d.mood='happy'}
+    self.pets[:dogs].each { |d| d.mood='happy'}
   end 
   def play_with_cats
-    self.pets[1].each { |c| c.mood='happy'}
+    self.pets[:cats].each { |c| c.mood='happy'}
   end 
   def feed_fish
     self.pets[0].each { |f| f.mood='happy'}
