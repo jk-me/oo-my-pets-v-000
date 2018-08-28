@@ -1,5 +1,5 @@
 require_relative 'spec_helper.rb'
-
+require 'pry'
 describe Owner do
 
   let(:owner) { Owner.new("human") }
@@ -166,4 +166,5 @@ describe Owner do
       end
     end
   end
+  binding pry
 end
