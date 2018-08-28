@@ -48,7 +48,7 @@ class Owner
     @pets={:fishes =>[], :cats =>[], :dogs =>[]}
   end 
   def list_pets 
-    return "I have #{self.pets[:fishes].length} fish, #{self.pets[:dogs].length} dog(s), #{self.pets[:cats].length} cat(s)."
+    return "I have #{self.pets[:fishes].length} fish, #{self.pets[:dogs].length} dog(s), and #{self.pets[:cats].length} cat(s)."
   end
 end
 
