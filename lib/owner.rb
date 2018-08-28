@@ -17,7 +17,7 @@ class Owner
     @@all=[]
   end
   def say_species
-    return "I am a #{self.species}"
+    return "I am a #{self.species}."
   end 
   #def pets
     #@pets
