@@ -37,20 +37,17 @@ describe Owner do
         expect { owner.species = "hamster" }.to raise_error NoMethodError
       end
     end
-
     describe "#say_species " do
       it "can say its species" do
         expect(owner.say_species).to eq("I am a human.")
       end
     end
-
     describe "#name" do
       it "can have a name" do
         owner.name = "Katie"
         expect(owner.name).to eq("Katie")
       end
     end
-
     describe "#pets" do
       it "is initialized with a pets attribute as a hash with 3 keys" do
         expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
