@@ -25,7 +25,6 @@ describe Owner do
   let(:fish) { Fish.new("Nemo") }
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
-
   context 'instance methods' do
     describe "#pets" do
       it "is initialized with a pets attribute as a hash with 3 keys" do
