@@ -166,5 +166,5 @@ describe Owner do
       end
     end
   end
-  binding pry
+  #binding pry
 end
