@@ -1,5 +1,5 @@
 class Owner
-  attr_reader :species, :name
+  attr_reader :species, :name, 
   @@all=[]
   def initialize(species)
     @species=species
@@ -16,6 +16,9 @@ class Owner
   end
   def say_species
     return "I am a #{self.species}"
+  end 
+  def pets 
+    
 end
 
 
