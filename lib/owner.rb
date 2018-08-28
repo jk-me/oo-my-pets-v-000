@@ -1,36 +1,28 @@
 class Owner
-  # code goes here
+  @@all=[]
+  def initialize
+    @species='human'
+    @@all << self
+  end 
+  def self.all 
+    @@all 
+  end
+  def self.count
+    @@all.length 
+  end 
+  def self.reset_all
+    @all=[]
+  end
+  def say_
 end
 
 
 
 describe Owner do
-
   let(:owner) { Owner.new("human") }
   let(:fish) { Fish.new("Nemo") }
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
-
-  context 'Class methods' do
-    it "keeps track of the owners that have been created" do
-      expect(Owner.all).to include(owner)
-    end
-
-    it "can count how many owners have been created" do
-      Owner.reset_all
-      Owner.new("human")
-      expect(Owner.count).to eq(1)
-    end
-
-    it "can reset the owners that have been created" do
-      Owner.reset_all
-      expect(Owner.count).to eq(0)
-    end
-
-    it "can initialize an owner" do
-      expect(owner).to be_a(Owner)
-    end
-  end
 
   context 'instance methods' do
 
