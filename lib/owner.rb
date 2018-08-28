@@ -24,7 +24,8 @@ class Owner
   #end 
   def buy_fish
     fish=Fish.new('bubbles')
-    
+    self.pets[1] << fish 
+  end 
     
     
 end
@@ -60,7 +61,6 @@ describe Owner do
         expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
       end
     end
-
     describe "#buy_fish" do
       it 'can buy a fish that is an instance of the Fish class' do
         expect(owner.pets[:fishes].count).to eq(0)
