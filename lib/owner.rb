@@ -42,6 +42,12 @@ class Owner
   end 
   def feed_fish
     self.pets[0].each { |f| f.mood='happy'}
+  end 
+  def sell_pets 
+    self.pets.each{|pets,p| p.mood = 'nervous'}
+    @pets={:fishes =>[], :cats =>[], :dogs =>[]}
+  end 
+  def
 end
 
 describe Owner do
@@ -50,33 +56,6 @@ describe Owner do
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
   context 'instance methods' do
-    describe "#walk_dogs" do
-      it "walks the dogs which makes the dogs' moods happy" do
-        dog = Dog.new("Daisy")
-        owner.pets[:dogs] << dog
-        owner.walk_dogs
-        expect(dog.mood).to eq("happy")
-      end
-    end
-
-    describe "#play_with_cats" do
-      it "plays with the cats which makes the cats moods happy" do
-        cat = Cat.new("Muffin")
-        owner.pets[:cats] << cat
-        owner.play_with_cats
-        expect(cat.mood).to eq("happy")
-      end
-    end
-
-    describe "#feed_fish" do
-      it "feeds the fishes which makes the fishes' moods happy" do
-        fish = Fish.new("Nemo")
-        owner.pets[:fishes] << fish
-        owner.feed_fish
-        expect(fish.mood).to eq("happy")
-      end
-    end
-
     describe "#sell_pets" do
       it 'can sell all its pets, which make them nervous' do
         fido = Dog.new("Fido")
