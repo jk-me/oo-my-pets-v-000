@@ -22,10 +22,15 @@ class Owner
   #def pets
     #@pets
   #end 
-  def buy_fish
-    fish=Fish.new('bubbles')
-    self.pets[1] << fish 
+  def buy_fish(name)
+    fish=Fish.new(name)
+    self.pets[0] << fish 
   end 
+  def buy_cat(name)
+    cat=Cat.new(name)
+    self.pets[1] << cat 
+  end
+  def buy_dog(name)
     
     
 end
