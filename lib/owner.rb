@@ -31,7 +31,9 @@ class Owner
     self.pets[1] << cat 
   end
   def buy_dog(name)
-    
+    dog=Dog.new(name)
+    self.pets[2] << dog 
+  end 
     
 end
 
