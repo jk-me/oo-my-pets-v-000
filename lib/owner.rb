@@ -14,7 +14,7 @@ class Owner
     @@all.length 
   end 
   def self.reset_all
-    @all=[]
+    @@all=[]
   end
   def say_species
     return "I am a #{self.species}"
