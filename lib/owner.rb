@@ -29,8 +29,6 @@ class Owner
     
 end
 
-
-
 describe Owner do
   let(:owner) { Owner.new("human") }
   let(:fish) { Fish.new("Nemo") }
