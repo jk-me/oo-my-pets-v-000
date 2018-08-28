@@ -1,7 +1,8 @@
 class Owner
+  attr_reader :species, :name
   @@all=[]
-  def initialize
-    @species='human'
+  def initialize(species)
+    @species=species
     @@all << self
   end 
   def self.all 
@@ -13,7 +14,8 @@ class Owner
   def self.reset_all
     @all=[]
   end
-  def say_
+  def say_species
+    return "I am a #{self.species}"
 end
 
 
@@ -25,32 +27,7 @@ describe Owner do
   let(:dog) { Dog.new("Fido") }
 
   context 'instance methods' do
-
-    describe "#species" do
-      it "initializes with a species" do
-        expect(owner.species).to eq("human")
-      end
-
-      it "can't change its species" do
-        expect { owner.species = "hamster" }.to raise_error NoMethodError
-      end
-    end
-
-    describe "#say_species " do
-      it "can say its species" do
-        expect(owner.say_species).to eq("I am a human.")
-      end
-    end
-
-    describe "#name" do
-      it "can have a name" do
-        owner.name = "Katie"
-        expect(owner.name).to eq("Katie")
-      end
-    end
-
     describe "#pets" do
-
       it "is initialized with a pets attribute as a hash with 3 keys" do
         expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
       end
