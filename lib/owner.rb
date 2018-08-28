@@ -34,7 +34,14 @@ class Owner
     dog=Dog.new(name)
     self.pets[2] << dog 
   end 
-    
+  def walk_dogs 
+    self.pets[2].each { |d| d.mood='happy'}
+  end 
+  def play_with_cats
+    self.pets[1].each { |c| c.mood='happy'}
+  end 
+  def feed_fish
+    self.pets[0].each { |f| f.mood='happy'}
 end
 
 describe Owner do
@@ -43,81 +50,6 @@ describe Owner do
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
   context 'instance methods' do
-    describe "#species" do
-      it "initializes with a species" do
-        expect(owner.species).to eq("human")
-      end
-
-      it "can't change its species" do
-        expect { owner.species = "hamster" }.to raise_error NoMethodError
-      end
-    end
-    describe "#say_species " do
-      it "can say its species" do
-        expect(owner.say_species).to eq("I am a human.")
-      end
-    end
-    describe "#name" do
-      it "can have a name" do
-        owner.name = "Katie"
-        expect(owner.name).to eq("Katie")
-      end
-    end
-    describe "#pets" do
-      it "is initialized with a pets attribute as a hash with 3 keys" do
-        expect(owner.pets).to eq({:fishes => [], :dogs => [], :cats => []})
-      end
-    end
-    describe "#buy_fish" do
-      it 'can buy a fish that is an instance of the Fish class' do
-        expect(owner.pets[:fishes].count).to eq(0)
-        owner.buy_fish("Bubbles")
-        owner.pets[:fishes].each do |fish|
-          expect(fish).to be_a(Fish)
-        end
-        expect(owner.pets[:fishes].count).to eq(1)
-      end
-
-      it 'knows about its fishes' do
-        owner.buy_fish("Bubbles")
-        expect(owner.pets[:fishes][0].name).to eq("Bubbles")
-      end
-    end
-
-    describe "#buy_cat" do
-      it 'can buy a cat that is an instance of the Cat class' do
-        expect(owner.pets[:cats].count).to eq(0)
-        owner.buy_cat("Crookshanks")
-        owner.pets[:cats].each do |cat|
-          expect(cat).to be_a(Cat)
-        end
-        expect(owner.pets[:cats].count).to eq(1)
-      end
-
-      it 'knows about its cats' do
-        owner.buy_cat("Crookshanks")
-        expect(owner.pets[:cats][0].name).to eq("Crookshanks")
-      end
-
-    end
-
-    describe "#buy_dog" do
-      it 'can buy a dog that is an instance of the Dog class' do
-        expect(owner.pets[:dogs].count).to eq(0)
-        owner.buy_dog("Snuffles")
-        owner.pets[:dogs].each do |dog|
-          expect(dog).to be_a(Dog)
-        end
-        expect(owner.pets[:dogs].count).to eq(1)
-      end
-
-
-      it 'knows about its dogs' do
-        owner.buy_dog("Snuffles")
-        expect(owner.pets[:dogs][0].name).to eq("Snuffles")
-      end
-    end
-
     describe "#walk_dogs" do
       it "walks the dogs which makes the dogs' moods happy" do
         dog = Dog.new("Daisy")
