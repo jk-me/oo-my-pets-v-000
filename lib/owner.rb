@@ -25,9 +25,7 @@ describe Owner do
   let(:fish) { Fish.new("Nemo") }
   let(:cat) { Cat.new("Crookshanks") }
   let(:dog) { Dog.new("Fido") }
-
   context 'instance methods' do
-
     describe "#species" do
       it "initializes with a species" do
         expect(owner.species).to eq("human")
